@@ -52,28 +52,32 @@ function CreateCounter(){
     `;
     return counterBox;
 }
-
-function CreatePersons(){
-    const botPerson =  document.createElement('div');
-
+//--------------ShowAlertMessage----------------------------------
+let alertMessage = document.createElement('div') ;
+function ShowAlertMessage(){
+    alertMessage.className= 'alert-message' ;
+    alertMessage.innerHTML=" turn left your phone to correct work the app" ;
+    document.body.prepend(alertMessage);
+    
 }
+if(maxWidth <= 425){
+    setTimeout(ShowAlertMessage, 1500);
+    setTimeout(() => alertMessage.remove(), 7500);
+}
+//-------------------------------------------------
 
-// ------------  ---------------------------
+
+// ------------ ShowCoordinate ---------------------------
 function ShowCoordinate(){
     let botCoordinates = firstPerson.getBoundingClientRect();
     let userCoordinates = secondPerson.getBoundingClientRect();
     let botLeft = botCoordinates.left + botCoordinates.width;
     let userLeft = userCoordinates.left;
     if(botLeft >= userLeft){
-        secondPerson.classList.add("__active");
+       // secondPerson.classList.add("__active");
     }
    
 }
-
-
-
-
-
 
 
 
@@ -165,23 +169,16 @@ boxElement.addEventListener("click", function(e){
         stage.classList.add('__active');
         firstPerson.classList.add('__active')
         firstPerson.addEventListener('animationstart',function(e){
-            if(e.animationName === 'attack'){
+            if(e.animationName === 'botmove'){
                 firstTurboEngine.classList.add('__active');
             }
         })
+        secondPerson.classList.add('__active')
         mainContainer.after(counterBox);
 
 
     }
     setTimeout(ShowResult, 1500);
-
-    
-    
-    
-
-
-
-
 });
 
 
