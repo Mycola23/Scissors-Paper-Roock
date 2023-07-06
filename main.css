@@ -71,14 +71,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /*----------------*/
 
-html,body {
-    overflow-x: hidden;
-}
+
 body {
   font-family: "Quicksand", sans-serif;
   font-size: 2.5rem;
   background: #1C1F25;
   position: relative;
+  overflow-x: hidden;
 }
 
 .wrapper {
