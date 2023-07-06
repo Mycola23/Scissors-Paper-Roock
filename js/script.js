@@ -34,6 +34,9 @@ let  result = null;
 let botWins = 0;
 let userWins = 0;
 
+let checkUserWins = 0;
+let checkBotWins = 0;
+
 // counter box
 
 let counterBox = document.createElement('div');       
@@ -78,6 +81,9 @@ function ShowCoordinate(){
     }
    
 }
+//__________________check win ___________________________________
+
+
 
 
 
@@ -99,12 +105,29 @@ boxElement.addEventListener("click", function(e){
     
     firstPerson.classList.add(botChoice);
     secondPerson.classList.add(userChoice);
+    function checkWin(){
+        if(checkUserWins === 1){
+            secondPerson.classList.add(`${userChoice}attack`);
+            firstPerson.classList.add(`${userChoice}defense`)
+            console.log(secondPerson);
+        }else if(checkBotWins === 1){
+            firstPerson.classList.add(`${botChoice}attack`);
+            secondPerson.classList.add(`${botChoice}defense`);
+            console.log(firstPerson);
+        }else{
+            secondPerson.classList.add('zero');
+            firstPerson.classList.add('zero');
+    
+            console.log(secondPerson)
+        }
+    }
     function ShowResult(){
         target.parentElement.classList.remove("__active"); 
         if(userChoice ==='paper'){
             switch(botChoice){
                 case 'rock' : 
                     result = "  You  wiiin this game!!!";
+                    checkUserWins = 1;
                     userWins++;
                     break;
     
@@ -114,6 +137,7 @@ boxElement.addEventListener("click", function(e){
     
                 case 'scissors' :
                     result = " You lost this game :-(";
+                    checkBotWins =1;
                     botWins++;
                     break;
     
@@ -126,11 +150,13 @@ boxElement.addEventListener("click", function(e){
     
                 case 'paper' : 
                     result = " Bot win you ";
+                    checkBotWins =1;
                     botWins++;
                     break;
     
                 case 'scissors' : 
                     result = " \\ You wiin this game //";
+                    checkUserWins =1;
                     userWins++;
                     break;
     
@@ -139,12 +165,14 @@ boxElement.addEventListener("click", function(e){
             switch(botChoice){
                 case 'rock' : 
                     result = "  Bot win you )";
+                    checkBotWins =1;
                     botWins++;
     
                     break;
     
                 case 'paper' : 
                     result = " You win bot ,but It`s not EEnd !";
+                    checkUserWins = 1;
                     userWins++;
                     break;
     
@@ -154,6 +182,8 @@ boxElement.addEventListener("click", function(e){
     
             }
         }
+
+
         /*
         let alertBox = document.createElement('div');
         alertBox.className = "alert-box";
@@ -164,8 +194,9 @@ boxElement.addEventListener("click", function(e){
 
 
         //setInterval(ShowCoordinate,100)
-        CreateCounter()
-        mainContainer.classList.add('__active')
+        checkWin();
+        CreateCounter();
+        mainContainer.classList.add('__active');
         stage.classList.add('__active');
         firstPerson.classList.add('__active')
         firstPerson.addEventListener('animationstart',function(e){
@@ -174,11 +205,16 @@ boxElement.addEventListener("click", function(e){
             }
         })
         secondPerson.classList.add('__active')
-        mainContainer.after(counterBox);
+        boxElement.after(counterBox);
 
 
     }
     setTimeout(ShowResult, 1500);
+    setTimeout(function(){
+        mainContainer.classList.remove('__active');
+        stage.classList.remove("__active");
+        counterBox.classList.add("__active");
+    },7500)
+    
 });
-
 

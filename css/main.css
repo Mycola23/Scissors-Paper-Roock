@@ -74,6 +74,8 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 2.5rem;
   background: #1C1F25;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .wrapper {
@@ -169,18 +171,18 @@ body {
 }
 
 .counter-box {
-  display: none;
+  display: block;
   text-align: center;
   position: relative;
   left: 50%;
-  top: 25%;
+  bottom: -15%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  width: 100%;
-  height: 350px;
+  width: 50%;
+  height: auto;
   opacity: 0;
-  font-size: calc(25px + 20 * ((100vw - 320px) / 640));
-  line-height: calc(35.7px + 39.3 * ((100vw - 320px) / 640));
+  font-size: calc(20px + 10 * ((100vw - 320px) / 640));
+  line-height: calc(25px + 10 * ((100vw - 320px) / 640));
   color: #fff;
   -webkit-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
@@ -188,6 +190,10 @@ body {
 
 .counter-box p {
   margin-bottom: 25px;
+}
+
+.counter-box.__active {
+  opacity: 1;
 }
 
 .stage {
@@ -393,15 +399,15 @@ body {
 }
 
 .bot.rock::before {
-  background: #ffc800 url("img/rock-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/rock-removebg-preview.png") center/cover no-repeat;
 }
 
 .bot.paper::before {
-  background: #ffc800 url("img/paper-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/paper-removebg-preview.png") center/cover no-repeat;
 }
 
 .bot.scissors::before {
-  background: #ffc800 url("img/scissors-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/scissors-removebg-preview.png") center/cover no-repeat;
 }
 
 .bot::before {
@@ -432,15 +438,15 @@ body {
 }
 
 .user.rock::before {
-  background: #ffc800 url("img/rock-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/rock-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.paper::before {
-  background: #ffc800 url("img/paper-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/paper-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.scissors::before {
-  background: #ffc800 url("img/scissors-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("/img/scissors-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.__active {
