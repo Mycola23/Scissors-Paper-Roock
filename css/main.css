@@ -76,6 +76,7 @@ body {
   background: #1C1F25;
   overflow-x: hidden;
   overflow-y: auto;
+  position: relative;
 }
 
 .wrapper {
@@ -425,6 +426,26 @@ body {
           transform-style: preserve-3d;
   -webkit-box-shadow: 5px 25px 35px #796e6e81;
           box-shadow: 5px 25px 35px #796e6e81;
+}
+
+.user span {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: -30%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 0;
+  height: 0;
+  border-left: 100px solid #ffffff;
+  border-bottom: 65px solid transparent;
+  border-top: 65px solid transparent;
+  -webkit-filter: blur(20px) drop-shadow(100px -16px 20px red) invert(100%);
+          filter: blur(20px) drop-shadow(100px -16px 20px red) invert(100%);
+}
+
+.user span.__active {
+  opacity: 1;
 }
 
 .user::before {

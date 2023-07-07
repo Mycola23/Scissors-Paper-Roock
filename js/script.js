@@ -3,12 +3,13 @@
 
 const boxElement = document.querySelector('.items');
 const mainContainer = document.querySelector('.__container');
-const stage = document.querySelector('.stage')
-const firstPerson = document.querySelector('.bot')
-const secondPerson = document.querySelector('.user')
-const firstTurboEngine = document.querySelector('.bot span')
+const stage = document.querySelector('.stage');
+const firstPerson = document.querySelector('.bot');
+const secondPerson = document.querySelector('.user');
+const firstTurboEngine = document.querySelector('.bot span');
+const secondTurboEngine = document.querySelector(".user span");
+const persons = [firstPerson,secondPerson];
 
-                                                                                  // todo make alert-message with  text : turn left your phone to correct work app
 const maxWidth = document.documentElement.clientWidth;
 //alert(maxWidth)
 
@@ -71,16 +72,7 @@ if(maxWidth <= 425){
 
 
 // ------------ ShowCoordinate ---------------------------
-function ShowCoordinate(){
-    let botCoordinates = firstPerson.getBoundingClientRect();
-    let userCoordinates = secondPerson.getBoundingClientRect();
-    let botLeft = botCoordinates.left + botCoordinates.width;
-    let userLeft = userCoordinates.left;
-    if(botLeft >= userLeft){
-       // secondPerson.classList.add("__active");
-    }
-   
-}
+
 //__________________check win ___________________________________
 
 
@@ -93,11 +85,11 @@ boxElement.addEventListener("click", function(e){
     let target = e.target;
 
     target.parentElement.classList.toggle("__active");                  
-    let userChoice = null;                                              // TODO make animation with timeout(задержкой) to show fight on stage, show letters   'Vs'  ,fight animation (paper обгортає собою камінь, камінь падає на ножиці, ножиці ріжуть папір )
+    let userChoice = null;                                              // TODO  animation (paper обгортає собою камінь, камінь падає на ножиці, ножиці ріжуть папір )
     RandomChoice();                                                         // turn on function that generate random num // todo circle blue without center part (Ну і нащо це нажав ?? =>кнопка з написом  клік-клак вискакує помилка => Окей, жми сюди)
     if (target.closest('.paper')){
         userChoice = 'paper';
-    }else if(target.closest('.rock')){                                       // todo think about change color of icons svg
+    }else if(target.closest('.rock')){                                       
         userChoice = 'rock';
     }else if(target.closest('.scissors')){
         userChoice = 'scissors';
@@ -105,8 +97,26 @@ boxElement.addEventListener("click", function(e){
     
     firstPerson.classList.add(botChoice);
     secondPerson.classList.add(userChoice);
+
+    // Addscill
+    function AddScill(firstclass, secondclass){  //todo work this function
+        firstclass = botChoice;
+        secondclass = userChoice;
+
+        let botCoordinates = firstPerson.getBoundingClientRect();
+        let userCoordinates = secondPerson.getBoundingClientRect();
+        let botLeft = botCoordinates.left + botCoordinates.width;
+        let userLeft = userCoordinates.left;
+        if(botLeft >= userLeft){
+            secondPerson.classList.add(`${secondclass}attack`);
+            firstPerson.classList.add(`${secondclass}defense`)
+        }
+       
+    }
+    //-----------------------------------------------------------
     function checkWin(){
         if(checkUserWins === 1){
+           // AddScill();
             secondPerson.classList.add(`${userChoice}attack`);
             firstPerson.classList.add(`${userChoice}defense`)
             console.log(secondPerson);
@@ -203,7 +213,12 @@ boxElement.addEventListener("click", function(e){
             if(e.animationName === 'botmove'){
                 firstTurboEngine.classList.add('__active');
             }
-        })
+        });
+        secondPerson.addEventListener('animationstart',function(e){
+            if(e.animationName === 'usermove'){
+                secondTurboEngine.classList.add('__active');
+            }
+        });
         secondPerson.classList.add('__active')
         boxElement.after(counterBox);
 
@@ -214,6 +229,11 @@ boxElement.addEventListener("click", function(e){
         mainContainer.classList.remove('__active');
         stage.classList.remove("__active");
         counterBox.classList.add("__active");
+        persons.forEach((element) => {
+            element.classList.remove('__active');
+        });
+        firstTurboEngine.classList.remove('__active');
+        secondTurboEngine.classList.remove('__active');
     },7500)
     
 });
