@@ -89,7 +89,7 @@ body {
 }
 
 .__container {
-  background: url("/img/stage.svg") /*may remove*/
+  background: url("img/stage.png") /*may remove*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
