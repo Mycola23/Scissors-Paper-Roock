@@ -401,15 +401,15 @@ body {
 }
 
 .bot.rock::before {
-  background: #ffc800 url("/img/rock-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url('https://mycola23.github.io/Scissors-Paper-Roock/img/rock-removebg-preview.png') center/cover no-repeat;
 }
 
 .bot.paper::before {
-  background: #ffc800 url("/img/paper-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/paper-removebg-preview.png") center/cover no-repeat;
 }
 
 .bot.scissors::before {
-  background: #ffc800 url("/img/scissors-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/scissors-removebg-preview.png") center/cover no-repeat;
 }
 
 .bot::before {
@@ -460,15 +460,15 @@ body {
 }
 
 .user.rock::before {
-  background: #ffc800 url("/img/rock-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/rock-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.paper::before {
-  background: #ffc800 url("/img/paper-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/paper-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.scissors::before {
-  background: #ffc800 url("/img/scissors-removebg-preview.png") center/cover no-repeat;
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/scissors-removebg-preview.png") center/cover no-repeat;
 }
 
 .user.__active {
