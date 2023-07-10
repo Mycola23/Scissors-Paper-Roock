@@ -95,7 +95,7 @@ boxElement.addEventListener("click", function(e){
         let userCoordinates = secondPerson.getBoundingClientRect();
         let botLeft = botCoordinates.left + botCoordinates.width;
         let userLeft = userCoordinates.left;
-        console.log(botLeft)
+        //console.log(botLeft)
         if(botLeft >= userLeft){
             secondPerson.classList.add(`${scill}attack`);
             firstPerson.classList.add(`${scill}reaction`);
