@@ -70,16 +70,6 @@ if(maxWidth <= 425){
 }
 //-------------------------------------------------
 
-
-// ------------ ShowCoordinate ---------------------------
-
-//__________________check win ___________________________________
-
-
-
-
-
-
 //  start event click
 boxElement.addEventListener("click", function(e){
     let target = e.target;
@@ -99,36 +89,48 @@ boxElement.addEventListener("click", function(e){
     secondPerson.classList.add(userChoice);
 
     // Addscill
-    function AddScill(firstclass, secondclass){  //todo work this function
-        firstclass = botChoice;
-        secondclass = userChoice;
+    function AddScill(scill){  //todo work this function
 
         let botCoordinates = firstPerson.getBoundingClientRect();
         let userCoordinates = secondPerson.getBoundingClientRect();
         let botLeft = botCoordinates.left + botCoordinates.width;
         let userLeft = userCoordinates.left;
+        console.log(botLeft)
         if(botLeft >= userLeft){
-            secondPerson.classList.add(`${secondclass}attack`);
-            firstPerson.classList.add(`${secondclass}defense`)
+            secondPerson.classList.add(`${scill}attack`);
+            firstPerson.classList.add(`${scill}reaction`);
         }
-       
+        
     }
     //-----------------------------------------------------------
     function checkWin(){
         if(checkUserWins === 1){
-           // AddScill();
-            secondPerson.classList.add(`${userChoice}attack`);
-            firstPerson.classList.add(`${userChoice}defense`)
-            console.log(secondPerson);
+            let timer  = setInterval(() =>{
+                AddScill(userChoice);
+                setTimeout(()=>{
+                    clearInterval(timer);
+                    firstPerson.classList.remove(`${userChoice}reaction`);
+                    secondPerson.classList.remove(`${userChoice}attack`);
+                }, 7000);
+            },100);
         }else if(checkBotWins === 1){
-            firstPerson.classList.add(`${botChoice}attack`);
-            secondPerson.classList.add(`${botChoice}defense`);
-            console.log(firstPerson);
+            let timer  = setInterval(() =>{
+                AddScill(botChoice);
+                setTimeout(()=>{
+                    clearInterval(timer);
+                    firstPerson.classList.remove(`${botChoice}reaction`);
+                    secondPerson.classList.remove(`${botChoice}attack`);
+                }, 7000);
+            },100);
         }else{
-            secondPerson.classList.add('zero');
-            firstPerson.classList.add('zero');
-    
-            console.log(secondPerson)
+            let timer  = setInterval(() =>{
+                AddScill('zero');
+                setTimeout(()=>{
+                    clearInterval(timer);
+                    firstPerson.classList.remove(`zeroreaction`);
+                    secondPerson.classList.remove(`zeroattack`);
+                }, 7000);
+            },100);
         }
     }
     function ShowResult(){
@@ -231,9 +233,15 @@ boxElement.addEventListener("click", function(e){
         counterBox.classList.add("__active");
         persons.forEach((element) => {
             element.classList.remove('__active');
+            element.classList.remove('rock');
+            element.classList.remove('paper');
+            element.classList.remove('scissors');
         });
         firstTurboEngine.classList.remove('__active');
         secondTurboEngine.classList.remove('__active');
+        checkUserWins = 0;
+        checkBotWins = 0;
+
     },7500)
     
 });
