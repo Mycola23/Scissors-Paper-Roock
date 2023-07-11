@@ -89,7 +89,7 @@ boxElement.addEventListener("click", function(e){
     secondPerson.classList.add(userChoice);
 
     // Addscill
-    function AddScill(scill){  //todo work this function
+    function AddScill(scill){ 
 
         let botCoordinates = firstPerson.getBoundingClientRect();
         let userCoordinates = secondPerson.getBoundingClientRect();
@@ -97,8 +97,13 @@ boxElement.addEventListener("click", function(e){
         let userLeft = userCoordinates.left;
         //console.log(botLeft)
         if(botLeft >= userLeft){
-            secondPerson.classList.add(`${scill}attack`);
-            firstPerson.classList.add(`${scill}reaction`);
+            if(checkBotWins ===1){
+                secondPerson.classList.add(`${scill}reaction`);
+                firstPerson.classList.add(`${scill}attack`);
+            }else{
+                secondPerson.classList.add(`${scill}attack`);
+                firstPerson.classList.add(`${scill}reaction`);
+            }
         }
         
     }
@@ -118,8 +123,8 @@ boxElement.addEventListener("click", function(e){
                 AddScill(botChoice);
                 setTimeout(()=>{
                     clearInterval(timer);
-                    firstPerson.classList.remove(`${botChoice}reaction`);
-                    secondPerson.classList.remove(`${botChoice}attack`);
+                    firstPerson.classList.remove(`${botChoice}attack`);
+                    secondPerson.classList.remove(`${botChoice}reaction`);
                 }, 7000);
             },100);
         }else{

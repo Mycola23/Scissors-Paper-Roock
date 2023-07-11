@@ -70,12 +70,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*----------------*/
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   font-size: 2.5rem;
   background: #1C1F25;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   position: relative;
 }
 
@@ -250,7 +253,7 @@ body {
 }
 
 .bot {
-  left: -10%;
+  left: -20%;
   border-left: 2px solid #000000;
   -webkit-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
@@ -417,7 +420,7 @@ body {
 
 .user {
   opacity: 1;
-  right: -10%;
+  right: -20%;
   border-right: 2px solid #000000;
   -webkit-transition: all 0.7s ease 0s;
   transition: all 0.7s ease 0s;
@@ -567,15 +570,15 @@ body {
 }
 
 .user.zeroattack {
-  -webkit-animation: userzero 1.5s linear 0s;
-          animation: userzero 1.5s linear 0s;
+  -webkit-animation: userzero 0.8s linear 0s;
+          animation: userzero 0.8s linear 0s;
 }
 
 @-webkit-keyframes userzero {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-250%, 0%) rotate(0deg);
-            transform: translate(-250%, 0%) rotate(0deg);
+    -webkit-transform: translate(-350%, 0%) rotate(0deg);
+            transform: translate(-350%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
@@ -587,8 +590,8 @@ body {
 @keyframes userzero {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-250%, 0%) rotate(0deg);
-            transform: translate(-250%, 0%) rotate(0deg);
+    -webkit-transform: translate(-350%, 0%) rotate(0deg);
+            transform: translate(-350%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
@@ -598,15 +601,15 @@ body {
 }
 
 .bot.zeroreaction {
-  -webkit-animation: botzero 1.5s linear 0s;
-          animation: botzero 1.5s linear 0s;
+  -webkit-animation: botzero 0.8s linear 0s;
+          animation: botzero 0.8s linear 0s;
 }
 
 @-webkit-keyframes botzero {
   0% {
     opacity: 1;
-    -webkit-transform: translate(250%, 0%) rotate(0deg);
-            transform: translate(250%, 0%) rotate(0deg);
+    -webkit-transform: translate(350%, 0%) rotate(0deg);
+            transform: translate(350%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
@@ -618,13 +621,235 @@ body {
 @keyframes botzero {
   0% {
     opacity: 1;
-    -webkit-transform: translate(250%, 0%) rotate(0deg);
-            transform: translate(250%, 0%) rotate(0deg);
+    -webkit-transform: translate(350%, 0%) rotate(0deg);
+            transform: translate(350%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
     -webkit-transform: translate(-355%, 500px) rotate(-965deg);
             transform: translate(-355%, 500px) rotate(-965deg);
+  }
+}
+
+.bot.rockreaction {
+  -webkit-animation: botrockreaction 0.5s linear 0s;
+          animation: botrockreaction 0.5s linear 0s;
+}
+
+@-webkit-keyframes botrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(350%, 0%) rotate(0deg);
+            transform: translate(350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-355%, 500px) rotate(-965deg);
+            transform: translate(-355%, 500px) rotate(-965deg);
+  }
+}
+
+@keyframes botrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(350%, 0%) rotate(0deg);
+            transform: translate(350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-355%, 500px) rotate(-965deg);
+            transform: translate(-355%, 500px) rotate(-965deg);
+  }
+}
+
+.user.rockreaction {
+  -webkit-animation: userrockreaction 0.5s linear 0s;
+          animation: userrockreaction 0.5s linear 0s;
+}
+
+@-webkit-keyframes userrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-350%, 0%) rotate(0deg);
+            transform: translate(-350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(355%, 500px) rotate(965deg);
+            transform: translate(355%, 500px) rotate(965deg);
+  }
+}
+
+@keyframes userrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-350%, 0%) rotate(0deg);
+            transform: translate(-350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(355%, 500px) rotate(965deg);
+            transform: translate(355%, 500px) rotate(965deg);
+  }
+}
+
+.user.paperattack {
+  -webkit-animation: userPaperAttack 0.5s linear 0s;
+          animation: userPaperAttack 0.5s linear 0s;
+}
+
+.bot.paperreaction {
+  -webkit-animation: botPaperReaction 0.3s linear 0s;
+          animation: botPaperReaction 0.3s linear 0s;
+}
+
+@-webkit-keyframes botPaperReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg);
+            transform: translate(400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(450%, 0%) rotate(0deg);
+            transform: translate(450%, 0%) rotate(0deg);
+  }
+}
+
+@keyframes botPaperReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg);
+            transform: translate(400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(450%, 0%) rotate(0deg);
+            transform: translate(450%, 0%) rotate(0deg);
+  }
+}
+
+@-webkit-keyframes userPaperAttack {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg) scale(1, 1);
+            transform: translate(-400%, 0%) rotate(0deg) scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg) scale(15, 10);
+            transform: translate(-400%, 0%) rotate(0deg) scale(15, 10);
+  }
+}
+
+@keyframes userPaperAttack {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg) scale(1, 1);
+            transform: translate(-400%, 0%) rotate(0deg) scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg) scale(15, 10);
+            transform: translate(-400%, 0%) rotate(0deg) scale(15, 10);
+  }
+}
+
+.bot.paperattack {
+  -webkit-animation: botPaperAttack 0.5s linear 0s;
+          animation: botPaperAttack 0.5s linear 0s;
+}
+
+.user.paperreaction {
+  -webkit-animation: userPaperReaction 0.3s linear 0s;
+          animation: userPaperReaction 0.3s linear 0s;
+}
+
+@-webkit-keyframes botPaperAttack {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg) scale(1, 1);
+            transform: translate(400%, 0%) rotate(0deg) scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg) scale(15, 10);
+            transform: translate(400%, 0%) rotate(0deg) scale(15, 10);
+  }
+}
+
+@keyframes botPaperAttack {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg) scale(1, 1);
+            transform: translate(400%, 0%) rotate(0deg) scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(400%, 0%) rotate(0deg) scale(15, 10);
+            transform: translate(400%, 0%) rotate(0deg) scale(15, 10);
+  }
+}
+
+@-webkit-keyframes userPaperReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg);
+            transform: translate(-400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-450%, 0%) rotate(0deg);
+            transform: translate(-450%, 0%) rotate(0deg);
+  }
+}
+
+@keyframes userPaperReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg);
+            transform: translate(-400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-450%, 0%) rotate(0deg);
+            transform: translate(-450%, 0%) rotate(0deg);
+  }
+}
+
+.bot.rockreaction {
+  -webkit-animation: botrockreaction 0.5s linear 0s;
+          animation: botrockreaction 0.5s linear 0s;
+}
+
+@keyframes botrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(350%, 0%) rotate(0deg);
+            transform: translate(350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-355%, 500px) rotate(-965deg);
+            transform: translate(-355%, 500px) rotate(-965deg);
+  }
+}
+
+.user.rockreaction {
+  -webkit-animation: userrockreaction 0.5s linear 0s;
+          animation: userrockreaction 0.5s linear 0s;
+}
+
+@keyframes userrockreaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-350%, 0%) rotate(0deg);
+            transform: translate(-350%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(355%, 500px) rotate(965deg);
+            transform: translate(355%, 500px) rotate(965deg);
   }
 }
 
