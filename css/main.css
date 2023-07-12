@@ -467,6 +467,7 @@ body {
 
 .user.paper::before {
   background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/paper-removebg-preview.png") center/cover no-repeat;
+  
 }
 
 .user.scissors::before {
