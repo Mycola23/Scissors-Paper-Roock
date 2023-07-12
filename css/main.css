@@ -817,39 +817,145 @@ body {
   }
 }
 
-.bot.rockreaction {
-  -webkit-animation: botrockreaction 0.5s linear 0s;
-          animation: botrockreaction 0.5s linear 0s;
+.bot.scissorsreaction::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 85%;
+  background-color: #ffc800;
+  border: 3px solid #000;
+  border-radius: 15px;
+  -webkit-animation: particle 3.5s linear 0s;
+          animation: particle 3.5s linear 0s;
 }
 
-@keyframes botrockreaction {
+.bot.scissorsreaction {
+  -webkit-animation: botScissorsReaction 3.5s linear 0s;
+          animation: botScissorsReaction 3.5s linear 0s;
+}
+
+@-webkit-keyframes botScissorsReaction {
   0% {
     opacity: 1;
-    -webkit-transform: translate(350%, 0%) rotate(0deg);
-            transform: translate(350%, 0%) rotate(0deg);
+    -webkit-transform: translate(400%, 0%) rotate(0deg);
+            transform: translate(400%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate(-355%, 500px) rotate(-965deg);
-            transform: translate(-355%, 500px) rotate(-965deg);
+    -webkit-transform: translate(-550%, 1000%) rotate(-756deg);
+            transform: translate(-550%, 1000%) rotate(-756deg);
   }
 }
 
-.user.rockreaction {
-  -webkit-animation: userrockreaction 0.5s linear 0s;
-          animation: userrockreaction 0.5s linear 0s;
-}
-
-@keyframes userrockreaction {
+@keyframes botScissorsReaction {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-350%, 0%) rotate(0deg);
-            transform: translate(-350%, 0%) rotate(0deg);
+    -webkit-transform: translate(400%, 0%) rotate(0deg);
+            transform: translate(400%, 0%) rotate(0deg);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate(355%, 500px) rotate(965deg);
-            transform: translate(355%, 500px) rotate(965deg);
+    -webkit-transform: translate(-550%, 1000%) rotate(-756deg);
+            transform: translate(-550%, 1000%) rotate(-756deg);
+  }
+}
+
+@-webkit-keyframes particle {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%) rotate(0deg);
+            transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-550%, -10000%) rotate(-1256deg);
+            transform: translate(-550%, -10000%) rotate(-1256deg);
+  }
+}
+
+@keyframes particle {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%) rotate(0deg);
+            transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-550%, -10000%) rotate(-1256deg);
+            transform: translate(-550%, -10000%) rotate(-1256deg);
+  }
+}
+
+.user.scissorsreaction {
+  -webkit-animation: userScissorsReaction 3.5s linear 0s;
+          animation: userScissorsReaction 3.5s linear 0s;
+}
+
+@-webkit-keyframes userScissorsReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg);
+            transform: translate(-400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(550%, 1000%) rotate(756deg);
+            transform: translate(550%, 1000%) rotate(756deg);
+  }
+}
+
+@keyframes userScissorsReaction {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-400%, 0%) rotate(0deg);
+            transform: translate(-400%, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(550%, 1000%) rotate(756deg);
+            transform: translate(550%, 1000%) rotate(756deg);
+  }
+}
+
+.user.scissorsreaction::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 85%;
+  background-color: #ffc800;
+  border: 3px solid #000;
+  border-radius: 15px;
+  -webkit-animation: userParticle 3.5s linear 0s;
+          animation: userParticle 3.5s linear 0s;
+}
+
+@-webkit-keyframes userParticle {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%) rotate(0deg);
+            transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(550%, -10000%) rotate(1256deg);
+            transform: translate(550%, -10000%) rotate(1256deg);
+  }
+}
+
+@keyframes userParticle {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0%) rotate(0deg);
+            transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(550%, -10000%) rotate(1256deg);
+            transform: translate(550%, -10000%) rotate(1256deg);
   }
 }
 
