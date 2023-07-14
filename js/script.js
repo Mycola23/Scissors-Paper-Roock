@@ -56,6 +56,15 @@ function CreateCounter(){
     `;
     return counterBox;
 }
+//------------- message about  win ---------------------
+
+
+let winNotification = document.createElement('div');
+function CreateWinNotification(){
+    winNotification.className = "win-notification";
+    winNotification.innerHTML = ` <p> ${result}  </p>`;
+}
+
 //--------------ShowAlertMessage----------------------------------
 let alertMessage = document.createElement('div') ;
 function ShowAlertMessage(){
@@ -228,6 +237,12 @@ boxElement.addEventListener("click", function(e){
         });
         secondPerson.classList.add('__active')
         boxElement.after(counterBox);
+        setTimeout(()=>{
+            CreateWinNotification();
+            winNotification.classList.add("__active");
+            stage.prepend(winNotification)
+        },4400)
+        stage.prepend(winNotification);
 
 
     }
@@ -242,12 +257,13 @@ boxElement.addEventListener("click", function(e){
             element.classList.remove('paper');
             element.classList.remove('scissors');
         });
+        winNotification.classList.remove('__active');
         firstTurboEngine.classList.remove('__active');
         secondTurboEngine.classList.remove('__active');
         checkUserWins = 0;
         checkBotWins = 0;
 
-    },7500)
+    },8500)
     
 });
 

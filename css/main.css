@@ -204,7 +204,7 @@ body {
   opacity: 0;
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 200%;
   width: 100%;
   height: 100%;
   background: url("https://mycola23.github.io/Scissors-Paper-Roock/img/stage.svg") center/cover no-repeat;
@@ -241,6 +241,41 @@ body {
 
 .stage__title span {
   text-align: center;
+}
+
+.win-notification {
+  position: absolute;
+  opacity: 0;
+  top: 39%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: calc(25px + 20 * ((100vw - 320px) / 640));
+  line-height: calc(35.7px + 39.3 * ((100vw - 320px) / 640));
+  color: #fff;
+}
+
+.win-notification.__active {
+  -webkit-animation: activeWinNotifivation 2.5s linear 0s;
+          animation: activeWinNotifivation 2.5s linear 0s;
+}
+
+@-webkit-keyframes activeWinNotifivation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes activeWinNotifivation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .cylinder {
@@ -402,6 +437,20 @@ body {
   border: 3px solid #ffc800;
 }
 
+/*
+.bot.rock::before {
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/rock-removebg-preview.png") center/cover no-repeat;
+}
+
+.bot.paper::before {
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/paper-removebg-preview.png") center/cover no-repeat;
+}
+
+.bot.scissors::before {
+  background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/scissors-removebg-preview.png") center/cover no-repeat;
+}
+
+*/
 .bot.rock::before {
   background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/rock-removebg-preview.png") center/cover no-repeat;
 }
@@ -467,7 +516,6 @@ body {
 
 .user.paper::before {
   background: #ffc800 url("https://mycola23.github.io/Scissors-Paper-Roock/img/paper-removebg-preview.png") center/cover no-repeat;
-  
 }
 
 .user.scissors::before {
