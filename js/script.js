@@ -11,8 +11,35 @@ const secondTurboEngine = document.querySelector(".user span");
 const persons = [firstPerson,secondPerson];
 
 const maxWidth = document.documentElement.clientWidth;
-//alert(maxWidth)
 
+const btncontainer = document.querySelector('.btn__container');
+
+//settings as reset & save               Only  for computer-user
+btncontainer.addEventListener('click',function(e){
+    let target = e.target;
+    if(target.closest('.save')){
+        target.classList.add('__active');
+        localStorage.setItem('userWins', JSON.stringify(userWins));
+        localStorage.setItem('botWins', JSON.stringify(botWins));
+                                               // todo continue functions save and reset   => maybe no because of variables botWins and userWins and i need rewrite all this program 
+                                               //todo It`s bad news
+    }else if(target.closest('.reset') ){
+        target.classList.add('__active');
+        userWins = 0;
+        botWins = 0 ;
+        localStorage.removeItem('userWins');
+        localStorage.removeItem('botWins');
+    };
+    setTimeout(function(){
+        if(target.closest('.save') || target.closest('.reset'))
+        target.classList.remove('__active');
+    },1.5*1000);
+    
+})
+
+
+
+//
 
 let botChoice = null;
 function RandomChoice(){
@@ -31,12 +58,24 @@ function RandomChoice(){
     
 }
 
+
+
 let  result = null;
 let botWins = 0;
 let userWins = 0;
+if(localStorage.getItem('userWins') && localStorage.getItem('botWins')){
+    userWins = JSON.parse(localStorage.getItem('userWins'));
+    botWins = JSON.parse(localStorage.getItem('botWins'));
+}else {
+    botWins = 0;
+    userWins = 0 ;
+}
+
+
 
 let checkUserWins = 0;
 let checkBotWins = 0;
+
 
 // counter box
 
@@ -82,6 +121,7 @@ if(maxWidth <= 425){
 //  start event click
 boxElement.addEventListener("click", function(e){
     let target = e.target;
+    
 
     target.parentElement.classList.toggle("__active");                  
     let userChoice = null;                                              // TODO  animation (paper обгортає собою камінь, камінь падає на ножиці, ножиці ріжуть папір )
@@ -154,7 +194,7 @@ boxElement.addEventListener("click", function(e){
                 case 'rock' : 
                     result = "  You  wiiin this game!!!";
                     checkUserWins = 1;
-                    userWins++;
+                    userWins++;     
                     break;
     
                 case 'paper' : 
@@ -183,7 +223,7 @@ boxElement.addEventListener("click", function(e){
                 case 'scissors' : 
                     result = " \\ You wiin this game //";
                     checkUserWins =1;
-                    userWins++;
+                    userWins++;    
                     break;
     
             }
@@ -199,7 +239,7 @@ boxElement.addEventListener("click", function(e){
                 case 'paper' : 
                     result = " You win bot ,but It`s not EEnd !";
                     checkUserWins = 1;
-                    userWins++;
+                    userWins++; 
                     break;
     
                 case 'scissors' : 
